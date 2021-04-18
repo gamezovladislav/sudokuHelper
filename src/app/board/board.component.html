@@ -1,0 +1,29 @@
+<table class="sudoku-board">
+  <tr *ngFor="let row of rowSeq">
+    <td *ngFor="let col of rowSeq">
+      <mat-form-field [ngClass]="(type && type[0] ? toColor(type[row][col]) : 'default') + '-cell'">
+        <mat-label>...</mat-label>
+        <mat-select [(ngModel)]="table[row][col]">
+          <mat-option *ngFor="let num of rowSeq" [value]="num">
+            {{num + 1}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+
+<mat-form-field>
+  <mat-label>Choose number:</mat-label>
+  <mat-select [(ngModel)]="selectedNumber">
+    <mat-option *ngFor="let num of rowSeq" [value]="num">
+      {{num + 1}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<h2 class="mat-h2">Current snapshot: {{currentSnapshot}}</h2>
+<h2 class="mat-h2" *ngIf="hasErrors()">You have big problems</h2>
+<button mat-button (click)="selectNumber()">Select number</button>
+<button mat-button (click)="makeSnapshot()">Make snapshot</button>
+<button mat-button (click)="goBack()">Go Back</button>
+

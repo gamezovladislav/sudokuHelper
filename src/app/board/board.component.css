@@ -1,0 +1,19 @@
+table.sudoku-board mat-form-field {
+  width: 60px;
+}
+
+.red-cell {
+  background-color: lightcoral;
+}
+
+.green-cell {
+  background-color: lightgreen;
+}
+
+.yellow-cell {
+  background-color: #dfd880;
+}
+
+.default-cell {
+  background-color: beige;
+}

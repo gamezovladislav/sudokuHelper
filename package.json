@@ -1,47 +1,114 @@
 {
   "name": "sudoku-helper",
-  "version": "0.0.0",
+  "description": "Helper for 'Sudoku' game",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Gamezo.Vladislav"
+  },
+  "main": "main.js",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm"
+      },
+      "electronWinstallerConfig": {
+        "name": "sudoku_app_electronjs"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {}
+    }
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:electron": "ng build --base-href ./ && electron .",
+    "start:ef": "electron-forge start",
+    "package:ef": "electron-forge package",
+    "make:ef": "electron-forge make",
+    "publish:ef": "electron-forge publish"
   },
   "private": true,
-  "dependencies": {
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.23",
     "@angular/animations": "~8.2.14",
+    "@angular/cdk": "^8.2.3",
+    "@angular/cli": "^8.3.23",
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
+    "@angular/compiler-cli": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "~8.2.14",
+    "@angular/language-service": "~8.2.14",
+    "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "rxjs": "~6.4.0",
-    "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.23",
-    "@angular/cli": "~8.3.23",
-    "@angular/compiler-cli": "~8.2.14",
-    "@angular/language-service": "~8.2.14",
-    "@types/node": "~8.9.4",
+    "@electron-forge/installer-deb": "^6.0.0-beta.47",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "core-js": "^3.6.4",
+    "electron": "^7.1.10",
+    "electron-compile": "6.4.4",
+    "electron-forge": "^5.2.4",
+    "electron-packager": "^14.2.0",
+    "electron-prebuilt-compile": "4.0.0",
+    "hammerjs": "^2.0.8",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
-    "karma-jasmine-html-reporter": "^1.4.0",
+    "karma-jasmine-html-reporter": "^1.5.1",
+    "material-components-web": "^4.0.0",
     "protractor": "~5.4.0",
+    "rxjs": "~6.4.0",
     "ts-node": "~7.0.0",
+    "tslib": "^1.10.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "webpack": "^4.41.5",
+    "zone.js": "~0.9.1"
+  },
+  "dependencies": {
+    "@angular/animations": "~8.2.14",
+    "@angular/cdk": "^8.2.3",
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/forms": "~8.2.14",
+    "@angular/material": "^8.2.3",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/router": "~8.2.14",
+    "core-js": "^3.6.4",
+    "electron": "^7.1.10",
+    "electron-forge": "^5.2.4",
+    "electron-compile": "6.4.4",
+    "electron-packager": "^14.2.0",
+    "electron-prebuilt-compile": "4.0.0",
+    "hammerjs": "^2.0.8",
+    "material-components-web": "^4.0.0",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
   }
 }
